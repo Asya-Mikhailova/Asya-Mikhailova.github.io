@@ -1,0 +1,177 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff url("../img/geometry2.png"); /* Background pattern from Subtle Patterns */
+  font-family: "Cabin Sketch", cursive;
+  font-size: 30px;
+  color: #a72461;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: "Cabin Sketch", cursive;
+  font-weight: 300;
+  font-size: 50px;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+  width: 660px;
+  min-height: 680px;
+  background: linear-gradient(160deg, #ffce75 0%, #a72461 100%);
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 3em;
+}
+
+.deck .card {
+  height: 125px;
+  width: 125px;
+  background: linear-gradient(160deg, #918f8d 0%, #72696b 100%);
+  font-size: 0;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+  transform: rotateY(0);
+  background: #ffc250;
+  cursor: default;
+}
+
+.deck .card.show {
+  font-size: 50px;
+}
+
+.deck .card.match {
+  cursor: default;
+  background: #ffce75;
+  font-size: 50px;
+}
+
+.deck .card.fail {
+  cursor: default;
+  background: #ca2070d7;
+  font-size: 50px;
+}
+
+.deck .card.disable {
+  pointer-events: none;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+  text-align: left;
+  width: 345px;
+  margin-bottom: 10px;
+}
+
+.score-panel .stars {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+  list-style: none;
+  display: inline-block;
+}
+
+.score-panel .restart {
+  float: right;
+  cursor: pointer;
+}
+
+.modal__overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal__window {
+  width: 300px;
+  background: #fff;
+  border: 1px solid #fff;
+  font-size: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+.modal__titlebar {
+  display: flex;
+  height: 40px;
+  background: #a72461;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal__title {
+  margin-left: 15px;
+  font-weight: bold;
+  color: #ffce75;
+}
+
+.modal__close {
+  width: 40px;
+  height: 40px;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: #ffce75;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.modal__close:active {
+  transform: scale(0.9);
+}
+
+.modal__content {
+  padding: 15px;
+  font-size: 1.2rem;
+}
